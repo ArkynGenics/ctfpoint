@@ -25,10 +25,12 @@ router.post("/logout",async(req,res)=>{
 router.post("/register",async(req,res)=>{
     createUser(req,(err,result,code)=>{
         if(err) {
-            res.status(code).json({errors: err.message})
+            res.status(code).json({errors: err})
         }
         else {
             res.status(code).json({message: result})
         }
     })
 })
+
+module.exports = router;

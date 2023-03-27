@@ -1,5 +1,4 @@
 const db = require("../../config/database")
-const mysql = require('mysql2')
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 
@@ -44,7 +43,7 @@ const verifyPassword = (password) =>{
 }
 const verifyEmail = (email) =>{
     const emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(password.match(emailFormat)){
+    if(email.match(emailFormat)){
         return true;
     }else{
         return false;
@@ -53,12 +52,12 @@ const verifyEmail = (email) =>{
 const createUser = async (req,result) =>{
     const data = req.body
     if(!(data.username && verifyPassword(data.password) && verifyEmail(data.email))){
-        return result(["Input Invalid"],null,400);
+        return result(["Invalid Input"],null,400);
     }
     else{
-        data.status = 0;
+        data.role = 0;
         let query = "INSERT INTO users SET ?"
-        req.body.password = await bcrypt.hash(req.body.password,10)
+        data.password = await bcrypt.hash(req.body.password,10)
         db.query(query,data,(err)=>{
         if(err){
             return result([err.message],null,500)
@@ -66,7 +65,7 @@ const createUser = async (req,result) =>{
         else{
             return result(null,"New User Created",200)
         }
-    })
+        })
     }
 }
 
