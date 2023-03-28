@@ -10,11 +10,7 @@ router.post("/login",async(req,res)=>{
             res.status(code).json({"Success":false,"Message": err.message})
         }
         else {
-            res.status(code).cookie('token',result,{
-                expires : new Date(Date.now()+ 8982458),
-                secure :false,
-                httpOnly : true,
-            }).json({"Success":true});
+            res.status(code).json({"Success":true,"jwtToken": result});
         }
     })
 });
@@ -25,10 +21,10 @@ router.post("/logout",async(req,res)=>{
 router.post("/register",async(req,res)=>{
     createUser(req,(err,result,code)=>{
         if(err) {
-            res.status(code).json({errors: err})
+            res.status(code).json({"Success":false,errors: err})
         }
         else {
-            res.status(code).json({message: result})
+            res.status(code).json({"Success":true, message: result})
         }
     })
 })
