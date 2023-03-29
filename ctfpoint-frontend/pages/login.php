@@ -1,30 +1,22 @@
-<div class = "login">
+<div class = "form">
   <form onsubmit="login(event)">
       <h2 style = "font-size:40px;font-weight: bold;color:white;padding-bottom:10px;" class = "judulutama">Login</h2>
-
-      <div class = "juduluser">
+      <div class = "input-title">
           <label style = "font-size:20px;font-weight: bold;color:white;">Username/Email</label>
       </div>
-      <div class = "login-text">
+      <div class = "form-text">
           <input type="text" name ="username" id="username" size = "55">
       </div>
-      <div class = "judulpass">
+      <div class = "input-title">
           <label style = "font-size:20px;font-weight: bold;color:white;">Password</label>
       </div>
-      <div class = "login-text">
+      <div class = "form-text">
           <input type="password" name="password" id="password" size = "55">
       </div>
-      <button type ="submit" class = "btnlogin">Login</button>
+        <button type ="submit" class = "formbtn">Login</button>
   </form>
-  <a onclick="location.href = location.origin + location.pathname + '?page=register'">Register</a>
-  <div class = "verif">
-      <p style="font-size:20px;font-weight: bold;color: red;"><?php echo $user; ?></p>
-      <p style = "font-size:20px;font-weight: bold;color: red;"><?php echo $error; ?></p>
-  </div>
+    <button onclick="location.href = location.origin + location.pathname + '?page=register'" class = "formbtn">Register</button>
 </div>
-
-
-
 
 <script>
 function login(event) {
@@ -38,9 +30,9 @@ function login(event) {
     contentType: 'application/json; charset=utf-8',
     dataType: 'json',
     success: (data) => {
-      let res = JSON.parse(data)
-      if(res.Success == true){
-        document.cookie = `token=${data.jwtToken}`
+      console.log(data)
+      if(data.Success == true){
+        document.cookie = `username=${data.username}`
         alert("Login Successful")
         location.href = location.origin + location.pathname + '?page=event'
       }
@@ -54,3 +46,5 @@ function login(event) {
   })
 }
 </script>
+
+</html>
