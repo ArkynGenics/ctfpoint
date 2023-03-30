@@ -147,7 +147,7 @@ else {
   <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top navbar-transparent" style="background-image: linear-gradient(to right, #1A120B, #3C2A21);" > <!-- Notes, coba bkin ke right gradasinya.-->
     <!--<nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top navbar-transparent" style="background-color: #1A120B" >-->
   <div class="container">
-    <a class="navbar-brand fw-bolder" href="#home">CTFPoint</a> <!-- fw-bolder, it makes font size bolder-->
+    <a class="navbar-brand fw-bolder" href="/ctfpoint/ctfpoint-frontend/?page=event">CTFPoint</a> <!-- fw-bolder, it makes font size bolder-->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
