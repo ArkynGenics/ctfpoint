@@ -10,7 +10,11 @@ router.post("/login",async(req,res)=>{
             res.status(code).json({"Success":false,"Message": err.message})
         }
         else {
-            res.status(code).json({"Success":true,"jwtToken": result});
+            res.status(code).cookie('token',result,{
+                expires : new Date(Date.now()+ 8982458),
+                secure : false,
+                httpOnly : true,
+            }).json({"Success":true, message: "Successfully Logged In"});
         }
     })
 });

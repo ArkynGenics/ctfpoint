@@ -4,8 +4,8 @@ const path = require('path')
 const fs = require('fs');
 
 
-const listEvents = (req, result) =>{
-    var query = "SELECT * FROM events"
+const listWriteups = (req, result) =>{
+    var query = "SELECT * FROM writeups"
     db.query(query, (err, res) => {
         if (err) {
             return result([{errorCode: "ERROR_SERVER",location: "server", message: err.message}], null,500)
@@ -15,41 +15,41 @@ const listEvents = (req, result) =>{
         }
     })
 }
-const getEventById = (req, result) =>{
-    let eventId = req.params.id
-    var query = "SELECT * FROM events WHERE event_id = ?"
-    db.query(query,[eventId],(err, res) => {
+const getWriteupById = (req, result) =>{
+    let writeupId = req.params.id
+    var query = "SELECT * FROM writeups WHERE writeup_id = ?"
+    db.query(query,[writeupId],(err, res) => {
         if(err) {
             return result([{errorCode: "ERROR_SERVER",location: "server", message: err.message}], null,500)
         }
         else if(res.length < 1){
-            return result([{errorCode: "ERROR_NOT_FOUND", location:"server", message: "Event Not Found"}],null,404)
+            return result([{errorCode: "ERROR_NOT_FOUND", location:"server", message: "writeup Not Found"}],null,404)
         }
         else {
             return result(null, res[0],200)
         }
     })
 }
-const addEvent = (req,result) =>{
+const createWriteup = (req,result) =>{
     const data = req.body.data
-    let query = "INSERT INTO events SET ?"
+    let query = "INSERT INTO writeups SET ?"
     db.query(query, data,(err)=>{
         if(err){
             result({success:false,message:err.message},null,500)
         }
         else{
-            result(null,"Event Inserted Successfully",200)
+            result(null,"writeup Inserted Successfully",200)
         }
     })
 }
-const addEventImage = (req,result) =>{
+const uploadWriteupImage = (req,result) =>{
     try{
         const { mimetype, filename, path: filePath } = req.files['image'][0];
         // Check if the uploaded file is an image
         if (!mimetype.startsWith('image/')) {
             return res.status(400).send('The uploaded file is not an image.');
         }
-        const targetDir = path.join("uploads","event");
+        const targetDir = path.join("uploads","writeup");
         const targetPath = path.join(targetDir, filename);
         fs.mkdirSync(targetDir,{recursive:true})
         fs.renameSync(filePath, targetPath);
@@ -58,38 +58,38 @@ const addEventImage = (req,result) =>{
         result({success:false,message:"Upload Failed"},null,500)
     }
 }
-const deleteEventById = (eventId,result) =>{
-    let query = "DELETE FROM event WHERE event_id = ?"
-    let params = [eventId]
+const deleteWriteupById = (writeupId,result) =>{
+    let query = "DELETE FROM writeup WHERE writeup_id = ?"
+    let params = [writeupId]
     db.query(mysql.format(query,params),
     (err)=>{
        if(err){
         result({success: false, message: err.message},null,500)
        }
        else{
-        result(null,"Event Deleted Successfully",200)
+        result(null,"writeup Deleted Successfully",200)
        }
     })
 }
-const updateEvent = (req,result)=>{
+const updateWriteup = (req,result)=>{
     let data = req.body;
-    let eventId = req.body.eventId
-    let query = "UPDATE Events SET ? WHERE Event_id = ?"
-    db.query(query,[data,eventId],
+    let writeupId = req.body.writeupId
+    let query = "UPDATE writeups SET ? WHERE writeup_id = ?"
+    db.query(query,[data,writeupId],
     (err)=>{
         if(err){
             result({success:false,message:err.message},null,500)
         }
         else{
-            result(null,"Event Edited Successfully",200)
+            result(null,"Writeup Edited Successfully",200)
         }
     })
 }
 module.exports = {
-    listEvents,
-    addEvent,
-    deleteEventById,
-    updateEvent,
-    getEventById,
-    addEventImage
+    listwriteups,
+    addwriteup,
+    deletewriteupById,
+    updatewriteup,
+    getwriteupById,
+    addwriteupImage
 }

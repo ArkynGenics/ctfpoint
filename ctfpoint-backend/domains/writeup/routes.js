@@ -4,12 +4,12 @@ const express = require('express');
 const router= express.Router();
 const multer = require('multer');
 const path = require('path');
-const upload = multer({ dest: 'uploads/event' });
+const upload = multer({ dest: 'uploads/writeup' });
 
-const {listEvents,addEvent,deleteEventById,updateEvent,addEventImage} = require("./controller")
+const {} = require("./controller")
 
 router.get("/",(req,res)=>{
-    listEvents(req, (err, result,code) => {
+    listWriteups(req, (err, result,code) => {
         if(err) {
             res.status(code).json({errors: err})
         }
@@ -19,7 +19,7 @@ router.get("/",(req,res)=>{
     })
 })
 router.get("/:id",(req,res)=>{
-    getEventById(eventId, (err, result,code) => {
+    getWriteupById(writeupId, (err, result,code) => {
         if(err) {
             return res.status(code).json({errors:err})
         }
@@ -29,7 +29,7 @@ router.get("/:id",(req,res)=>{
     })
 })
 router.put("/update",async(req,res)=>{
-    updateEventById(req,(err,result,code)=>{
+    updateWriteupById(req,(err,result,code)=>{
         if(err) {
             res.status(code).json({errors: err})
         }
@@ -40,7 +40,7 @@ router.put("/update",async(req,res)=>{
 })
 router.delete("/delete", async(req,res)=>{
     customerId = req.query.customerId
-    deleteEventById(customerId,(err,result,code)=>{
+    deleteWriteupById(customerId,(err,result,code)=>{
         if(err) {
             res.status(code).json({errors: err})
         }
@@ -51,7 +51,7 @@ router.delete("/delete", async(req,res)=>{
     
 })
 router.post("/create",async(req,res)=>{
-    addEvent(req, (err, result, code) => {
+    createWriteup(req, (err, result, code) => {
         if(err) {
             res.status(code).json({errors: err})
         }
@@ -60,9 +60,9 @@ router.post("/create",async(req,res)=>{
         }
     })
 })
-router.post("/upload",upload.fields([{ name: 'image', maxCount: 1 }]),
+router.post("/upload",upload.fields([{ name: 'image', maxCount: 1 }, {name: 'data', maxCount: 1}]),
     async(req,res)=>{
-    addEventImage(req, (err, result, code) => {
+    uploadWriteupImage(req, (err, result, code) => {
         if(err) {
             res.status(code).json({errors: err})
         }
