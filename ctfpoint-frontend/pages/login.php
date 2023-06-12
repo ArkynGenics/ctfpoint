@@ -1,22 +1,32 @@
-<div class = "form">
+<div class = "boxlogin">
   <form onsubmit="login(event)">
-      <h2 style = "font-size:40px;font-weight: bold;color:white;padding-bottom:10px;" class = "judulutama">Login</h2>
-      <div class = "input-title">
-          <label style = "font-size:20px;font-weight: bold;color:white;">Username/Email</label>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="card mt-5">
+            <div class="card-body">
+              <h5 class="centeralg">Login</h5>
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username"placeholder="Enter your username">
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+              </div>
+              <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-warning">Login</button>
+              </div>
+              <p class="text-center mt-3">Don't have an account? Register <a onclick="location.href = location.origin + location.pathname + '?page=register'" class = "blue" style="cursor: pointer;">here</a></p>
+            </div>
+          </div>
+        </div> 
       </div>
-      <div class = "form-text">
-          <input type="text" name ="username" id="username" size = "55">
-      </div>
-      <div class = "input-title">
-          <label style = "font-size:20px;font-weight: bold;color:white;">Password</label>
-      </div>
-      <div class = "form-text">
-          <input type="password" name="password" id="password" size = "55">
-      </div>
-        <button type ="submit" class = "formbtn">Login</button>
+    </div>
   </form>
-    <button onclick="location.href = location.origin + location.pathname + '?page=register'" class = "formbtn">Register</button>
+  
 </div>
+
 
 <script>
 function login(event) {
@@ -31,9 +41,9 @@ function login(event) {
     dataType: 'json',
     success: (data) => {
       console.log(data)
-      if(data.Success == true){
-        document.cookie = `username=${data.username}`
+      if(data.success == true){
         alert("Login Successful")
+        document.cookie = `username=${data.username};token=${data.token}`
         location.href = location.origin + location.pathname + '?page=event'
       }
     },

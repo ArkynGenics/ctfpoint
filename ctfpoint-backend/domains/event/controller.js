@@ -15,8 +15,7 @@ const listEvents = (req, result) =>{
         }
     })
 }
-const getEventById = (req, result) =>{
-    let eventId = req.params.id
+const getEventById = (eventId, result) =>{
     var query = "SELECT * FROM events WHERE event_id = ?"
     db.query(query,[eventId],(err, res) => {
         if(err) {
@@ -30,8 +29,8 @@ const getEventById = (req, result) =>{
         }
     })
 }
-const addEvent = (req,result) =>{
-    const data = req.body.data
+const insertEvent = (req,result) =>{
+    const data = req.body
     let query = "INSERT INTO events SET ?"
     db.query(query, data,(err)=>{
         if(err){
@@ -42,26 +41,25 @@ const addEvent = (req,result) =>{
         }
     })
 }
-const addEventImage = (req,result) =>{
-    try{
-        const { mimetype, filename, path: filePath } = req.files['image'][0];
-        // Check if the uploaded file is an image
-        if (!mimetype.startsWith('image/')) {
-            return res.status(400).send('The uploaded file is not an image.');
-        }
-        const targetDir = path.join("uploads","event");
-        const targetPath = path.join(targetDir, filename);
-        fs.mkdirSync(targetDir,{recursive:true})
-        fs.renameSync(filePath, targetPath);
-        result(null,{success:true,image_name:filename},200)
-    }catch(err){
-        result({success:false,message:"Upload Failed"},null,500)
-    }
-}
+// const addEventImage = (req,result) =>{
+//     try{
+//         const { mimetype, filename, path: filePath } = req.files['image'][0];
+//         // Check if the uploaded file is an image
+//         if (!mimetype.startsWith('image/')) {
+//             return res.status(400).send('The uploaded file is not an image.');
+//         }
+//         const targetDir = path.join("uploads","event");
+//         const targetPath = path.join(targetDir, filename);
+//         fs.mkdirSync(targetDir,{recursive:true})
+//         fs.renameSync(filePath, targetPath);
+//         result(null,{success:true,image_name:filename},200)
+//     }catch(err){
+//         result({success:false,message:"Upload Failed"},null,500)
+//     }
+// }
 const deleteEventById = (eventId,result) =>{
-    let query = "DELETE FROM event WHERE event_id = ?"
-    let params = [eventId]
-    db.query(mysql.format(query,params),
+    let query = "DELETE FROM events WHERE event_id = ?"
+    db.query(query,eventId,
     (err)=>{
        if(err){
         result({success: false, message: err.message},null,500)
@@ -71,10 +69,10 @@ const deleteEventById = (eventId,result) =>{
        }
     })
 }
-const updateEvent = (req,result)=>{
+const updateEventById = (req,result)=>{
     let data = req.body;
-    let eventId = req.body.eventId
-    let query = "UPDATE Events SET ? WHERE Event_id = ?"
+    let eventId = req.body.event_id
+    let query = "UPDATE events SET ? WHERE Event_id = ?"
     db.query(query,[data,eventId],
     (err)=>{
         if(err){
@@ -87,9 +85,8 @@ const updateEvent = (req,result)=>{
 }
 module.exports = {
     listEvents,
-    addEvent,
+    insertEvent,
     deleteEventById,
-    updateEvent,
-    getEventById,
-    addEventImage
+    updateEventById,
+    getEventById
 }

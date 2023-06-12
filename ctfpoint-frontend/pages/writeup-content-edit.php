@@ -8,13 +8,13 @@
 <br>
 <br>
 
-<section class="pt-3">
+<section class="pt-3" style="background-color:#3C2A21;">
     <div class="d-grid gap-2 d-md-flex justify-content-md-end container">
         <a href="/ctfpoint/ctfpoint-frontend/?page=writeup" class="btn btn-secondary">Go Back</a>
     </div>
 </section>
 
-<section class="pt-3 pb-4">
+<section class="pt-3 pb-4" style="background-color:#3C2A21;">
 <div class="container">
     <div class="card text-center">
         <div class="card-header">

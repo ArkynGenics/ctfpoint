@@ -1,6 +1,5 @@
 <section id="articles">
   <div class="container">
-    <h3 class="fw-bolder text-light">Articles</h3>
     <div class="dropdown-center">
         <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Click here to sort

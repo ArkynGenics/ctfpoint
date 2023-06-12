@@ -1,12 +1,3 @@
-<!--
-<section id="writeup-content">
-  <div class="container">
-    <h3 class="fw-bolder text-light text-center"> Writeup Content</h3>
-  </div>
-</section>
--->
-<br>
-<br>
 
 <section class="pt-3">
     <div class="d-grid gap-2 d-md-flex justify-content-md-end container">
@@ -17,18 +8,52 @@
 <section class="pt-3 pb-4">
 <div class="container">
     <div class="card text-center">
-        <div class="card-header">
-            <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="true" href="#">Contents</a>
-                </li>
-            </ul>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Hack The Box: Shooting Star</h5>
-            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, laborum laboriosam dicta voluptatum necessitatibus accusantium ex nesciunt itaque? Officiis maxime illo ullam inventore dolorum? Vitae, optio labore. Libero, voluptate placeat.</p>
-        </div>
+        <?php
+        $url = "http://localhost:8000/api/writeup/:id";
+        $url = str_replace(':id', $_GET['id'], $url);
+        $response = file_get_contents($url);
+        if ($response) {
+            $dt = json_decode($response,true);
+            $html = '<div class="card-body"> 
+            <h5 class="card-title">'. $dt['data']['title'] .'</h5>
+            <p class="card-text">'. $dt['data']['language_used'] .'</p>
+            </div>';
+            echo $html;
+        } 
+        ?>
     </div>
+    <?php
+            echo '<div id="pdf-container"></div>';
+            echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>';
+            $js = '<script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var pdfContainer = document.getElementById("pdf-container");
+
+                        pdfjsLib.getDocument("./pdfs/'. $dt['data']['wu_filename'] .'").promise.then(function(pdf) {
+                            for (var pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+                                pdf.getPage(pageNumber).then(function(page) {
+                                    var canvas = document.createElement("canvas");
+                                    var context = canvas.getContext("2d");
+
+                                    var viewport = page.getViewport({ scale: 1.5 });
+                                    canvas.width = viewport.width;
+                                    canvas.height = viewport.height;
+
+                                    var renderContext = {
+                                        canvasContext: context,
+                                        viewport: viewport
+                                    };
+
+                                    page.render(renderContext).promise.then(function() {
+                                        pdfContainer.appendChild(canvas);
+                                    });
+                                });
+                            }
+                        });
+                    });
+                    </script>';
+                echo $js;
+        ?>
 </div>
 </section>
 
@@ -49,4 +74,3 @@
     </div>
   </div>
 </div>
-

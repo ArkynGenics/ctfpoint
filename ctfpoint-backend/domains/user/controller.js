@@ -7,11 +7,11 @@ const verifyUser = async (req,result) =>{
     username = req.body.username;
     password = req.body.password;
     if(!(username && password)){
-        result([{errorCode: "ERROR_SERVER",location: "server", message: "Invalid Username/Password"}],null,401);
+        result("Invalid Username/Password",null,401);
     }else{
         db.query(query,[username], async(err,res)=>{
             if(res[0] == null){
-                result([{errorCode: "ERROR_SERVER",location: "server", message: "Invalid Username/Password"}],null,401)
+                result("Invalid Username/Password",null,401)
             }
             else{
                 let user = res[0]
@@ -23,9 +23,9 @@ const verifyUser = async (req,result) =>{
                     },process.env.JWT_TOKEN_KEY,{
                         expiresIn: "2h",
                     });
-                    result(null,token,200);
+                    result(null,{token:token,username:user.username},200);
                 }else{
-                    result([{errorCode: "ERROR_SERVER",location: "server", message: "Invalid Username/Password"}],null,401)
+                    result("Invalid Username/Password",null,401)
                 }
             }
         })
@@ -52,7 +52,7 @@ const verifyEmail = (email) =>{
 const createUser = async (req,result) =>{
     const data = req.body
     if(!(data.username && verifyPassword(data.password) && verifyEmail(data.email))){
-        return result(["Invalid Input"],null,400);
+        return result("Invalid Input",null,400);
     }
     else{
         data.role = 0;
@@ -60,7 +60,7 @@ const createUser = async (req,result) =>{
         data.password = await bcrypt.hash(req.body.password,10)
         db.query(query,data,(err)=>{
         if(err){
-            return result([err.message],null,500)
+            return result(err.message,null,500)
         }
         else{
             return result(null,"New User Created",200)
@@ -68,8 +68,35 @@ const createUser = async (req,result) =>{
         })
     }
 }
+const updateUserById = (req,result)=>{
+    let data = req.body;
+    let writeupId = req.body.user_id
+    let query = "UPDATE users SET ? WHERE user_id = ?"
+    db.query(query,[data,writeupId],
+    (err)=>{
+        if(err){
+            result(err.message,null,500)
+        }
+        else{
+            result(null,"User Edited Successfully",200)
+        }
+    })
+}
 
+const getUserProfile = (username, result) =>{
+    var query = "SELECT * from users where username = ? limit 1"
+    db.query(query,[username], (err, res) => {
+        if (err) {
+            return result(err.message,null,500)
+        }
+        else {
+            return result(null, res[0], 200)
+        }
+    })
+}
 module.exports = {
     createUser,
-    verifyUser
+    verifyUser,
+    updateUserById,
+    getUserProfile
 }

@@ -9,6 +9,8 @@ app.use(cors({
     origin : "*",
     credentials : true
 }))
+app.set('view engine','ejs')
+app.use(express.static('public'))
 app.use(cookies())
 app.use(express.json())
 app.use(router)
