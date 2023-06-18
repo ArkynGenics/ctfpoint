@@ -319,6 +319,9 @@ active
 active
 <?php } ?> me-3 fw-medium" href="/ctfpoint/ctfpoint-frontend/?page=about-us">About Us</a>
         </li>
+        <li class="nav-item">
+                <?php if(!isset($_COOKIE["username"])&&$_SERVER['REQUEST_URI'] != "/ctfpoint/ctfpoint-frontend/?page=login") echo '<a class="nav-link" href="/ctfpoint/ctfpoint-frontend/?page=login">Log In</a>'?>
+                </li>
         <li class="nav-item dropdown">
          <?php if(isset($_COOKIE["username"]) && $_SERVER['REQUEST_URI'] != "/ctfpoint/ctfpoint-frontend/?page=login"&& $_SERVER['REQUEST_URI'] != "/ctfpoint/ctfpoint-frontend/?page=register") echo '<button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">'.$_COOKIE["username"].'
           </button>'?>
