@@ -1,5 +1,5 @@
 <section class="jumbotron text-center">
-      <img src="assets/kopi.gif" alt="THE LOGOOOO" width="200" class="rounded-circle img-thumbnail border-warning mb-3" />
+      <img src="assets/flag_lagi.png" alt="THE LOGOOOO" width="200" class="rounded-circle img-thumbnail border-warning mb-3" />
       <h1 class="fw-bold">CTFPoint</h1>
       <p class="lead">Hack Passionately Act Righteously</p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -54,7 +54,7 @@
     <img src="assets/pc.gif" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Jeffrey Jingga</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text">Cyber Security Student in Bina Nusantara University, have high interest in CTF & Penetration Testing</p>
     </div>
     <div class="card-footer">
       <small class="text-body-secondary">Cyber Security Student</small>
@@ -64,7 +64,7 @@
     <img src="assets/tbg.gif" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Pitra Winarianto</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text">Cyber Security Student in Bina Nusantara University, have high interest in CTF & Penetration Testing</p>
     </div>
     <div class="card-footer">
       <small class="text-body-secondary">Cyber Security Student</small>
@@ -74,7 +74,7 @@
     <img src="assets/jmp.gif" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Nicolas Saputra G</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text">Cyber Security Student in Bina Nusantara University, have high interest in CTF & Penetration Testing</p>
     </div>
     <div class="card-footer">
       <small class="text-body-secondary">Cyber Security Student</small>
@@ -84,7 +84,7 @@
     <img src="assets/dip.gif" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Divodas Omar F</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text">Cyber Security Student in Bina Nusantara University, have high interest in CTF & Penetration Testing</p>
     </div>
     <div class="card-footer">
       <small class="text-body-secondary">Cyber Security Student</small>
@@ -94,7 +94,7 @@
     <img src="assets/run.gif" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Bertrand Redondo M</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text">Cyber Security Student in Bina Nusantara University, have high interest in CTF & Penetration Testing</p>
     </div>
     <div class="card-footer">
       <small class="text-body-secondary">Cyber Security Student</small>
@@ -158,20 +158,19 @@
       <div class="modal-body">
         <img src="assets/skies.gif" class="w-100 rounded">
         <div class="container mt-3">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque saepe temporibus atque in. Quos, tenetur ipsum dolore, quod veniam molestiae beatae obcaecati explicabo voluptatem maxime laboriosam, quis aut ducimus dolor quas sunt adipisci excepturi vel?</p>
+        <p>Are you passionate about cybersecurity and eager to enhance your skills through CTF challenges? Look no further! Our CTF Writeup Subscription offers you an exciting features.</p>
+          <p>Subscription Features:</p>
         <ul>
-          <li>AAAAA</li>
-          <li>AAAAA</li>
-          <li>AAAAA</li>
-          <li>AAAAA</li>
-          <li>AAAAA</li>
+          <li>Increase user exposure and making your write up in the top.</li>
+          <li>Gain access to our premium Indonesian language.</li>
+          <li>Exclusive partnership opportunities.</li>
         </ul>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aspernatur provident ducimus harum temporibus? Ipsam explicabo modi consequuntur eaque nemo.</p>
+        <p>Don't miss out on these incredible benefits! Subscribe today and join our vibrant community of writers and readers, and unlock your full potential with our subscription service.</p>
         </div>
         
       </div>
       <div class="modal-footer">
-      <a href="/ctfpoint/ctfpoint-frontend/?page=subscription" class="btn fw-bold btn-warning">GO PREMIUM</a>
+      <a href="/ctfpoint/ctfpoint-frontend/?page=subscription" class="btn btn-warning btn-md fw-medium">GO PREMIUM</a>
       </div>
     </div>
   </div>

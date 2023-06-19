@@ -66,10 +66,17 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Benefit...
+      <p>Are you passionate about cybersecurity and eager to enhance your skills through CTF challenges? Look no further! Our CTF Writeup Subscription offers you an exciting features.</p>
+          <p>Subscription Features:</p>
+        <ul>
+          <li>Increase user exposure and making your write up in the top.</li>
+          <li>Gain access to our premium Indonesian language.</li>
+          <li>Exclusive partnership opportunities.</li>
+        </ul>
+        <p>Don't miss out on these incredible benefits! Subscribe today and join our vibrant community of writers and readers, and unlock your full potential with our subscription service.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary transition-btn">Get Premium</button>
+        <button type="button" class="btn btn-warning btn-md fw-medium">Get Premium</button>
       </div>
     </div>
   </div>

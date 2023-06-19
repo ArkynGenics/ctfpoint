@@ -84,20 +84,19 @@
       <div class="modal-body">
         <img src="assets/skies.gif" class="w-100 rounded">
         <div class="container mt-3">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque saepe temporibus atque in. Quos, tenetur ipsum dolore, quod veniam molestiae beatae obcaecati explicabo voluptatem maxime laboriosam, quis aut ducimus dolor quas sunt adipisci excepturi vel?</p>
+        <p>Are you passionate about cybersecurity and eager to enhance your skills through CTF challenges? Look no further! Our CTF Writeup Subscription offers you an exciting features.</p>
+          <p>Subscription Features:</p>
         <ul>
-          <li>AAAAA</li>
-          <li>AAAAA</li>
-          <li>AAAAA</li>
-          <li>AAAAA</li>
-          <li>AAAAA</li>
+          <li>Increase user exposure and making your write up in the top.</li>
+          <li>Gain access to our premium Indonesian language.</li>
+          <li>Exclusive partnership opportunities.</li>
         </ul>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aspernatur provident ducimus harum temporibus? Ipsam explicabo modi consequuntur eaque nemo.</p>
+        <p>Don't miss out on these incredible benefits! Subscribe today and join our vibrant community of writers and readers, and unlock your full potential with our subscription service.</p>
         </div>
         
       </div>
       <div class="modal-footer">
-      <a href="/ctfpoint/ctfpoint-frontend/?page=subscription" class="btn btn-warning">GO PREMIUM</a>
+      <a href="/ctfpoint/ctfpoint-frontend/?page=subscription" class="btn btn-warning btn-md fw-medium">GO PREMIUM</a>
       </div>
     </div>
   </div>

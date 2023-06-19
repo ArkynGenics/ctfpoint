@@ -167,7 +167,7 @@
 
                 <div class="p-3">
 
-                <button class="btn btn-warning transition-btn">Purchase</button> 
+                <button class="btn btn-warning btn-md fw-medium">Purchase</button> 
                     
                 </div>
                 </div>
