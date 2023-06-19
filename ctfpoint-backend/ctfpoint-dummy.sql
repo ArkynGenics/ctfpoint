@@ -153,10 +153,10 @@ CREATE TABLE `writeups` (
 --
 
 INSERT INTO `writeups` (`writeup_id`, `title`, `author`, `category_id`, `language_used`, `like_count`, `is_premium`, `wu_filename`, `status`) VALUES
-(1, 'Web Exploitation - XSS Attack', 'John Doe', 1, 'EN-US', 0, 0, 'testing.pdf', 1),
-(2, 'Cryptography - Caesar Cipher', 'Jane Smith', 2, 'EN-US', 0, 1, 'testing1.pdf', 1),
-(3, 'Pwn - Buffer Overflow', 'Alice Johnson', 3, 'id-ID', 0, 0, 'testing2.pdf', 1),
-(4, 'Reverse Engineering - CrackMe Challenge', 'Bob Anderson', 4, 'EN-US', 0, 1, 'testing3.pdf', 1),
+(1, 'Web Exploitation - XSS Attack', 'John Doe', 1, 'EN-US', 0, 0, 'ctf_intro.pdf', 1),
+(2, 'Cryptography - Caesar Cipher', 'Jane Smith', 2, 'EN-US', 0, 1, 'crypto_challenges.pdf', 1),
+(3, 'Pwn - Buffer Overflow', 'Alice Johnson', 3, 'id-ID', 0, 0, 'pwn_exploits.pdf', 1),
+(4, 'Reverse Engineering - CrackMe Challenge', 'Bob Anderson', 4, 'EN-US', 0, 1, 're_techniques.pdf', 1),
 (5, 'Web Exploitation - SQL Injection', 'Sarah Williams', 1, 'id-ID', 0, 1, 'sql_injection_writeup.pdf', 1),
 (6, 'Cryptography - RSA Encryption', 'David Thompson', 2, 'id-ID', 0, 0, 'rsa_encryption_writeup.pdf', 1),
 (7, 'Pwn - Return-Oriented Programming (ROP)', 'Emily Davis', 3, 'id-ID', 0, 1, 'rop_writeup.pdf', 1);
