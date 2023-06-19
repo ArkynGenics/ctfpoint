@@ -4,7 +4,8 @@
         $response = file_get_contents($url);
         if ($response) {
             $dt = json_decode($response,true);
-            $html = '<section id="edit-profile">
+            $html = '
+            <section id="edit-profile">
             <div class="container">
                 <div class="container rounded mt-2 bg-white mb-5">
                     <div class="row">
@@ -51,6 +52,34 @@
             echo $html;
         } 
         ?>
+    <script>
+        function updateProfile(event) {
+            event.preventDefault()
+            let data = getData(event.target)
+            data.user_id = "<?php $dt['data']['user_id'] ?>"
+            console.log(data)
+            $.ajax({
+                type: 'PUT',
+                url: 'http://localhost:8000/api/profile/update',
+                data: JSON.stringify(data),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: (data) => {
+                console.log(data)
+                if(data.success == true){
+                    alert("Update Successful")
+                    location.reload()
+                }
+                },
+                error: (xhr, status, error) => {
+                alert("Update Failed")
+                console.log(xhr)
+                console.log(status)
+                console.log(error)
+                }
+            })
+            }
+</script>
     
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

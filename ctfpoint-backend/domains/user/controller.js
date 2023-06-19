@@ -70,12 +70,11 @@ const createUser = async (req,result) =>{
 }
 const updateUserById = (req,result)=>{
     let data = req.body;
-    let writeupId = req.body.user_id
+    let userId = req.body.user_id
     let query = "UPDATE users SET ? WHERE user_id = ?"
-    db.query(query,[data,writeupId],
-    (err)=>{
-        if(err){
-            result(err.message,null,500)
+    db.query(query,[data,userId],(err,results)=>{
+        if(results.affectedRows === 0){
+            result("Failed to update user",null,500)
         }
         else{
             result(null,"User Edited Successfully",200)
