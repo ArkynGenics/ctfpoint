@@ -97,7 +97,7 @@
         
       </div>
       <div class="modal-footer">
-      <a href="/ctfpoint/ctfpoint-frontend/?page=subscription" class="btn btn-primary btn-md fw-medium transition-btn">GO PREMIUM</a>
+      <a href="/ctfpoint/ctfpoint-frontend/?page=subscription" class="btn btn-warning">GO PREMIUM</a>
       </div>
     </div>
   </div>

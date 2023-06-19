@@ -26,7 +26,7 @@
             <div class="card-body"> <!-- Body card bagian description -->
               <h5 class="card-title">National Cyber Week</h5>
               <p class="card-text">National Cyber Week is a competition for university student</p>
-              <a href="https://cscbinus.com/" class="btn btn-primary">See more</a>
+              <a href="https://cscbinus.com/" class="btn btn-warning">See more</a>
             </div>
         </div>
       </div>
@@ -36,7 +36,7 @@
             <div class="card-body">
               <h5 class="card-title">picoCTF</h5>
               <p class="card-text">picoCTF 2023 is a competition for university student</p>
-              <a href="https://picoctf.org/" class="btn btn-primary">See more</a>
+              <a href="https://picoctf.org/" class="btn btn-warning">See more</a>
             </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
             <div class="card-body">
               <h5 class="card-title">Hack The Box</h5>
               <p class="card-text">Where hackers level up! An online cybersecurity training platform.</p> <!-- Limited to 66 chars -->
-              <a href="https://www.hackthebox.com/" class="btn btn-primary">See more</a>
+              <a href="https://www.hackthebox.com/" class="btn btn-warning">See more</a>
             </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
             <div class="card-body">
               <h5 class="card-title">ctflearn</h5>
               <p class="card-text">The most beginner-friendly way to get into hacking. Get 1337 now!</p>
-              <a href="https://ctflearn.com/" class="btn btn-primary">See more</a>
+              <a href="https://ctflearn.com/" class="btn btn-warning">See more</a>
             </div>
         </div>
       </div>
@@ -72,7 +72,7 @@
             <div class="card-body"> <!-- Body card bagian description -->
               <h5 class="card-title">National Cyber Week</h5>
               <p class="card-text">National Cyber Week is a competition for university student</p>
-              <a href="https://cscbinus.com/" class="btn btn-primary">See more</a>
+              <a href="https://cscbinus.com/" class="btn btn-warning">See more</a>
             </div>
         </div>
       </div>
@@ -82,7 +82,7 @@
             <div class="card-body">
               <h5 class="card-title">picoCTF</h5>
               <p class="card-text">picoCTF 2023 is a competition for university student</p>
-              <a href="https://picoctf.org/" class="btn btn-primary">See more</a>
+              <a href="https://picoctf.org/" class="btn btn-warning">See more</a>
             </div>
         </div>
       </div>
@@ -92,7 +92,7 @@
             <div class="card-body">
               <h5 class="card-title">Hack The Box</h5>
               <p class="card-text">Where hackers level up! An online cybersecurity training platform.</p> <!-- Limited to 66 chars -->
-              <a href="https://www.hackthebox.com/" class="btn btn-primary">See more</a>
+              <a href="https://www.hackthebox.com/" class="btn btn-warning">See more</a>
             </div>
         </div>
       </div>
@@ -102,7 +102,7 @@
             <div class="card-body">
               <h5 class="card-title">ctflearn</h5>
               <p class="card-text">The most beginner-friendly way to get into hacking. Get 1337 now!</p>
-              <a href="https://ctflearn.com/" class="btn btn-primary">See more</a>
+              <a href="https://ctflearn.com/" class="btn btn-warning">See more</a>
             </div>
         </div>
       </div>
@@ -132,7 +132,7 @@
         
       </div>
       <div class="modal-footer">
-      <a href="/ctfpoint/ctfpoint-frontend/?page=subscription" class="btn btn-primary btn-md fw-medium transition-btn">GO PREMIUM</a>
+      <a href="/ctfpoint/ctfpoint-frontend/?page=subscription" class="btn btn-warning">GO PREMIUM</a>
       </div>
     </div>
   </div>
