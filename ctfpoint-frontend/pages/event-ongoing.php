@@ -102,7 +102,7 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
-      <div class="modal-header" style="background-image: linear-gradient(to right, #D5CEA3, #E5E5CB);">
+      <div class="modal-header" style="background-image: linear-gradient(to right, #884A39, #C38154);">
         <h5 class="modal-title fw-semibold" id="exampleModalLabel">$4.99 ONLY!</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>

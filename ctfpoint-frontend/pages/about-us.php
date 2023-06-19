@@ -151,7 +151,7 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
-      <div class="modal-header" style="background-image: linear-gradient(to right, #3C2A21, #5C3D2E);">
+      <div class="modal-header" style="background-image: linear-gradient(to right, #884A39, #C38154);">
         <h5 class="modal-title fw-semibold text-light" id="exampleModalLabel">$4.99 ONLY!</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -171,7 +171,7 @@
         
       </div>
       <div class="modal-footer">
-      <a href="/ctfpoint/ctfpoint-frontend/?page=subscription" class="btn btn-warning">GO PREMIUM</a>
+      <a href="/ctfpoint/ctfpoint-frontend/?page=subscription" class="btn fw-bold btn-warning">GO PREMIUM</a>
       </div>
     </div>
   </div>

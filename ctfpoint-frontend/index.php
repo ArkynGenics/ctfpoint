@@ -69,11 +69,6 @@
             background-repeat: repeat;
             font-family: 'Poppins', sans-serif;
           }
-          .bekgron-add-wu{
-            /*background-image: linear-gradient(to right, #884A39, #C38154);*/
-            /*background-image: linear-gradient(to right, #603601, #CC9544);*/
-            background-image: url('assets/cafe.gif');
-          }
 
           .dropdown-menu li{
             transition: all 1s ease 0s;
@@ -169,7 +164,7 @@
 
           .bekgron-add-wu{
             /*background-image: linear-gradient(to right, #884A39, #C38154);*/
-            background-image: linear-gradient(to right, #603601, #CC9544);
+            background-image: url("assets/cafe.gif");
           }
 
           .card-header {
