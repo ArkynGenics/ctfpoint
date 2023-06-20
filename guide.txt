@@ -1,0 +1,18 @@
+Guide dalam running Docker
+Urutan build:
+1. Database : 172.19.0.2 (Dockerfile database ada di dalam folder /ctfpoint-backend/database)
+2. Backend API : 172.19.0.3
+3. Frontend : 172.19.0.4
+
+Port backend : 8000
+Port DB : 3306
+Port Frontend : 8888
+
+Create Network: docker network create ctfpoint-network
+
+Command run DB:
+docker run -d -p 3306:3306 --name ctfpoint-database --network ctfpoint-network ctfpoint-database
+
+Command run Frontend:
+docker run -d -p 8888:80 --name contoh-frontend --network ctfpoint-network ctfpoint-frontend
+

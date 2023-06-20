@@ -8,8 +8,6 @@ COPY package*.json ./
 #running npm install
 RUN npm install
 #if production RUN npm ci --only=production
-
-RUN npm ci --only=production
 #
 COPY . .
 RUN touch .env
